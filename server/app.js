@@ -15,17 +15,35 @@ const rateLimit = require('express-rate-limit');
 const app = express();
 const port = Number(process.env.PORT) || 3000;
 const imageHosts = ['https://images.unsplash.com', 'https://fonts.googleapis.com', 'https://fonts.gstatic.com'];
-
+ 
 app.use(helmet({
   crossOriginResourcePolicy: { policy: 'cross-origin' },
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'"],
-      styleSrc: ["'self'", 'https://fonts.googleapis.com'],
+      scriptSrc: [
+        "'self'",
+        'https://accounts.google.com',
+      ],
+      
+      styleSrc: [
+      "'self'",
+      "'unsafe-inline'",
+      'https://fonts.googleapis.com',
+      'https://accounts.google.com',
+      ],
+
       fontSrc: ["'self'", 'https://fonts.gstatic.com'],
       imgSrc: ["'self'", 'data:', ...imageHosts],
-      connectSrc: ["'self'"],
+      connectSrc: [
+        "'self'",
+        'https://accounts.google.com',
+        'https://accounts.google.com/gsi/',
+      ],
+      frameSrc: [
+        "'self'",
+        'https://accounts.google.com',
+      ],
       objectSrc: ["'none'"],
       baseUri: ["'self'"],
       formAction: ["'self'"],
@@ -34,6 +52,7 @@ app.use(helmet({
     },
   },
 }));
+
 app.use(express.json({ limit: '10kb' }));
 app.use(cookieParser());
 app.use(cors({ origin: process.env.APP_ORIGIN || `http://localhost:${port}`, credentials: true }));

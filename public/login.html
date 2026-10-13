@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script src="/js/auth.js" defer></script>
 </head>
 <body class="auth-page">
@@ -18,7 +19,7 @@
     <p class="eyebrow">GOOD FOOD, GOOD MOOD</p>
     <h1>Welcome back</h1>
     <p class="muted">Sign in to continue your Cravely experience.</p>
-    <button class="button button-google" id="google-button" type="button">Continue with Google</button>
+    <div id="google-button" class="button-google"></div>
     <div class="divider"><span>OR</span></div>
     <form id="auth-form" data-mode="login" novalidate>
       <label for="email">Email address</label>
