@@ -1,0 +1,5 @@
+# Ignore dependencies, local secrets and the generated database.
+node_modules/
+.env
+data/
+npm-debug.log*

@@ -1,0 +1,212 @@
+```html
+<!doctype html>
+<!-- Cravely account creation page -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="theme-color"
+    content="#0a0a0f"
+  >
+
+  <title>Create account | Cravely</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Website CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+
+<body class="auth-page">
+
+  <main class="auth-card">
+
+    <!-- Brand -->
+    <a class="brand" href="/index.html">
+      <span class="brand-mark">C</span>
+      cravely<span class="brand-dot">.</span>
+    </a>
+
+
+    <!-- Heading -->
+    <p class="eyebrow">
+      YOUR NEXT FAVORITE MEAL
+    </p>
+
+    <h1>
+      Create your account
+    </h1>
+
+    <p class="muted">
+      Join us for something delicious.
+    </p>
+
+
+    <!-- Google Sign In -->
+    <button
+      class="button button-google"
+      id="google-button"
+      type="button"
+    >
+      Continue with Google
+    </button>
+
+
+    <!-- Divider -->
+    <div class="divider">
+      <span>OR</span>
+    </div>
+
+
+    <!-- Email/Password Signup -->
+    <form
+      id="auth-form"
+      data-mode="signup"
+      novalidate
+    >
+
+      <!-- Full Name -->
+      <label for="name">
+        Full name
+      </label>
+
+      <input
+        id="name"
+        name="name"
+        type="text"
+        autocomplete="name"
+        minlength="2"
+        maxlength="50"
+        placeholder="Your name"
+        required
+      >
+
+
+      <!-- Email -->
+      <label for="email">
+        Email address
+      </label>
+
+      <input
+        id="email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        placeholder="you@example.com"
+        required
+      >
+
+
+      <!-- Password -->
+      <label for="password">
+        Password
+      </label>
+
+      <div class="password-wrap">
+
+        <input
+          id="password"
+          name="password"
+          type="password"
+          autocomplete="new-password"
+          minlength="8"
+          maxlength="200"
+          placeholder="At least 8 characters"
+          required
+        >
+
+        <button
+          class="eye-button"
+          type="button"
+          data-toggle-password
+          aria-label="Show password"
+        >
+          Show
+        </button>
+
+      </div>
+
+
+      <!-- Password requirement -->
+      <p class="form-hint">
+        Use at least 8 characters with a letter and a number.
+      </p>
+
+
+      <!-- Firebase/Auth message -->
+      <p
+        class="form-message"
+        id="form-message"
+        role="alert"
+        aria-live="assertive"
+      ></p>
+
+
+      <!-- Create Account -->
+      <button
+        class="button button-primary full-width"
+        type="submit"
+      >
+        Create account
+      </button>
+
+    </form>
+
+
+    <!-- Login -->
+    <p class="auth-switch">
+      Already have an account?
+      <a href="/login.html">
+        Sign in
+      </a>
+    </p>
+
+
+    <!-- Terms -->
+    <p class="legal-copy">
+      By continuing, you agree to our
+      <a href="#">
+        Terms of Service
+      </a>
+      and
+      <a href="#">
+        Privacy Policy
+      </a>.
+    </p>
+
+  </main>
+
+
+  <!-- Firebase/Auth JavaScript -->
+  <script
+    type="module"
+    src="/js/auth.js"
+  ></script>
+
+</body>
+
+</html>
+```
+
+**Important:** The HTML now connects to `/js/auth.js` using:
+
+```html
+<script type="module" src="/js/auth.js"></script>
+```
+
+The actual Google and email/password authentication will be handled inside `auth.js`.

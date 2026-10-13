@@ -1,0 +1,35 @@
+<!doctype html>
+<!-- This page lets existing Cravely customers sign in to their account. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>Sign in | Cravely</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/auth.js" defer></script>
+</head>
+<body class="auth-page">
+  <main class="auth-card">
+    <a class="brand" href="/index.html"><span class="brand-mark">C</span>cravely<span class="brand-dot">.</span></a>
+    <p class="eyebrow">GOOD FOOD, GOOD MOOD</p>
+    <h1>Welcome back</h1>
+    <p class="muted">Sign in to continue your Cravely experience.</p>
+    <button class="button button-google" id="google-button" type="button">Continue with Google</button>
+    <div class="divider"><span>OR</span></div>
+    <form id="auth-form" data-mode="login" novalidate>
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+      <div class="label-row"><label for="password">Password</label><button class="text-button" id="forgot-button" type="button">Forgot password?</button></div>
+      <div class="password-wrap"><input id="password" name="password" type="password" autocomplete="current-password" maxlength="200" placeholder="Enter your password" required><button class="eye-button" type="button" data-toggle-password aria-label="Show password">Show</button></div>
+      <p class="form-message" id="form-message" role="alert" aria-live="assertive"></p>
+      <button class="button button-primary full-width" type="submit">Sign In</button>
+    </form>
+    <p class="auth-switch">New to Cravely? <a href="/signup.html">Sign up free</a></p>
+    <p class="legal-copy">By continuing, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+  </main>
+</body>
+</html>

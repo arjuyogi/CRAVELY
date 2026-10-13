@@ -1,0 +1,30 @@
+<!doctype html>
+<!-- This page confirms a completed demo order and shows its status. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>Order confirmed | Cravely</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/success.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="site-header"><a class="brand" href="/index.html"><span class="brand-mark">C</span>cravely<span class="brand-dot">.</span></a><div class="delivery-label">ORDER STATUS<span class="delivery-location">Kohalpur City</span></div><a class="icon-button" href="/orders.html" aria-label="Order history">☰</a></header>
+    <section class="success-panel" id="success-panel" aria-live="polite">
+      <div class="success-mark" aria-hidden="true">✓</div>
+      <p class="eyebrow">ORDER CONFIRMED</p>
+      <h1>You're all set!</h1>
+      <p id="success-message">Your order is being prepared fresh.</p>
+      <div class="status-steps"><div class="status-step">✓ Confirmed</div><div class="status-step">Preparing</div><div class="status-step">On its way</div></div>
+      <div id="success-items"></div>
+      <a class="button button-primary full-width" href="/orders.html">View your orders</a>
+    </section>
+    <p class="form-message is-error" id="success-error" role="status"></p>
+  </main>
+</body>
+</html>

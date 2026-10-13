@@ -1,0 +1,25 @@
+<!doctype html>
+<!-- This page shows the signed-in customer's order history. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>Your orders | Cravely</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/orders.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="site-header"><a class="brand" href="/index.html"><span class="brand-mark">C</span>cravely<span class="brand-dot">.</span></a><div class="delivery-label">ORDER HISTORY<span class="delivery-location">Kohalpur City</span></div><a class="icon-button" href="/index.html" aria-label="Browse menu">⌂</a></header>
+    <h1 class="page-title">Your orders</h1>
+    <p class="page-subtitle">All your delicious decisions in one place.</p>
+    <section class="order-list" id="order-list"></section>
+    <section class="empty-state" id="no-orders" hidden><h2>No orders yet</h2><p>Your next favorite meal is waiting.</p><a class="button button-primary" href="/index.html">Explore the menu</a></section>
+    <p class="form-message is-error" id="orders-error" role="status"></p>
+  </main>
+</body>
+</html>

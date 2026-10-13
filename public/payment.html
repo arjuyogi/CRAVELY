@@ -1,0 +1,46 @@
+<!doctype html>
+<!-- This page collects a simulated payment choice without transmitting card data. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>Secure checkout | Cravely</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/payment.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="site-header"><a class="brand" href="/index.html"><span class="brand-mark">C</span>cravely<span class="brand-dot">.</span></a><div class="delivery-label">SECURE CHECKOUT<span class="delivery-location">Kohalpur City</span></div><a class="icon-button" href="/cart.html" aria-label="Back to cart">←</a></header>
+    <h1 class="page-title">Payment</h1>
+    <p class="page-subtitle">Almost there — choose how you'd like to pay.</p>
+    <p class="demo-note">Demo payment - no real money is charged.</p>
+    <div class="payment-layout">
+      <section class="payment-card">
+        <h2>Payment method</h2>
+        <div class="toggle-group" role="group" aria-label="Payment method">
+          <button class="toggle-button active" id="card-choice" type="button" data-method="card">Credit / Debit Card</button>
+          <button class="toggle-button" id="wallet-choice" type="button" data-method="wallet">Digital Wallet</button>
+        </div>
+        <form id="payment-form" novalidate>
+          <div class="field-grid" id="card-fields">
+            <label>Card number<input id="card-number" type="text" inputmode="numeric" autocomplete="cc-number" maxlength="23" placeholder="0000 0000 0000 0000"></label>
+            <label>Name on card<input id="card-name" type="text" autocomplete="cc-name" maxlength="80" placeholder="Name as shown on card"></label>
+            <div class="toggle-group">
+              <label>Expiry date<input id="card-expiry" type="text" inputmode="numeric" autocomplete="cc-exp" maxlength="5" placeholder="MM/YY"></label>
+              <label>CVV<input id="card-cvv" type="password" inputmode="numeric" autocomplete="cc-csc" maxlength="4" placeholder="•••"></label>
+            </div>
+          </div>
+          <p class="form-message is-error" id="payment-message" role="status"></p>
+          <button class="button button-primary full-width" id="pay-button" type="submit">Pay रु 0</button>
+        </form>
+        <p class="secure-note"><span aria-hidden="true">🔒</span> Secure checkout</p>
+      </section>
+      <aside class="summary-card"><h2>Order summary</h2><div id="payment-summary"></div></aside>
+    </div>
+  </main>
+</body>
+</html>

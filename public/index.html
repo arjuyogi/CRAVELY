@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- This page lets signed-in customers browse and add Cravely menu items. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>Menu | Cravely</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/menu.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="site-header">
+      <a class="brand" href="/index.html"><span class="brand-mark">C</span>cravely<span class="brand-dot">.</span></a>
+      <div class="delivery-label">DELIVER TO<span class="delivery-location">Kohalpur City</span></div>
+      <div class="header-actions">
+        <a class="icon-button" href="/cart.html" aria-label="Open cart"><span aria-hidden="true">🛒</span><span class="cart-count" id="cart-count">0</span></a>
+        <button class="avatar-button" id="avatar-button" type="button" aria-label="Sign out">C</button>
+      </div>
+    </header>
+    <section aria-labelledby="welcome-title">
+      <h1 class="page-title" id="welcome-title">Good food, good mood.</h1>
+      <p class="page-subtitle">A little something delicious is just around the corner.</p>
+      <label class="search-wrap" for="menu-search"><input class="search-input" id="menu-search" type="search" placeholder="Search dishes, cravings..." maxlength="100"></label>
+      <div class="promo-banner"><div class="banner-copy"><p>Fresh from our kitchen</p><h2>Hand-folded momo, made fresh today</h2></div></div>
+      <nav class="category-list" id="category-list" aria-label="Menu categories"></nav>
+      <div class="section-heading"><h2 id="menu-heading">Explore the menu (20)</h2>
+        <label class="visually-hidden" for="sort-menu">Sort menu</label>
+        <select class="select-input" id="sort-menu" aria-label="Sort menu">
+          <option value="recommended">Recommended</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="rating">Top rated</option>
+        </select>
+      </div>
+      <p class="form-message" id="menu-message" role="status"></p>
+      <div class="food-grid" id="food-grid"></div>
+      <section class="empty-state" id="no-results" hidden><h2>No items found</h2><p>Try another search or category.</p></section>
+    </section>
+  </main>
+</body>
+</html>
