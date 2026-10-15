@@ -1,30 +1,155 @@
-<!doctype html>
-<!-- This page confirms a completed demo order and shows its status. -->
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a0a0f">
-  <title>Order confirmed | Cravely</title>
+
+  <title>Order Confirmed | Cravely</title>
+  <meta
+    name="description"
+    content="View your Cravely order confirmation and delivery progress."
+  >
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Order confirmation and delivery tracking -->
   <script src="/js/success.js" defer></script>
 </head>
+
 <body>
   <main class="app-shell">
-    <header class="site-header"><a class="brand" href="/index.html"><span class="brand-mark">C</span>cravely<span class="brand-dot">.</span></a><div class="delivery-label">ORDER STATUS<span class="delivery-location">Kohalpur City</span></div><a class="icon-button" href="/orders.html" aria-label="Order history">☰</a></header>
-    <section class="success-panel" id="success-panel" aria-live="polite">
+
+    <!-- Header -->
+    <header class="site-header">
+      <a class="brand" href="/index.html" aria-label="Cravely home">
+        <span class="brand-mark">C</span>
+        cravely<span class="brand-dot">.</span>
+      </a>
+
+      <div class="delivery-label">
+        ORDER STATUS
+        <span class="delivery-location">Kohalpur City</span>
+      </div>
+
+      <a
+        class="icon-button"
+        href="/orders.html"
+        aria-label="View order history"
+      >
+        ☰
+      </a>
+    </header>
+
+    <!-- Order confirmation -->
+    <section
+      class="success-panel"
+      id="success-panel"
+      aria-labelledby="success-heading"
+      aria-live="polite"
+    >
       <div class="success-mark" aria-hidden="true">✓</div>
+
       <p class="eyebrow">ORDER CONFIRMED</p>
-      <h1>You're all set!</h1>
-      <p id="success-message">Your order is being prepared fresh.</p>
-      <div class="status-steps"><div class="status-step">✓ Confirmed</div><div class="status-step">Preparing</div><div class="status-step">On its way</div></div>
+
+      <h1 id="success-heading">You're all set!</h1>
+
+      <p id="success-message">
+        Your order is being prepared fresh.
+      </p>
+
+      <!-- JavaScript can display order information here -->
+      <div id="success-order-details"></div>
+
+      <!-- Delivery tracking timeline -->
+      <section
+        class="delivery-timeline"
+        id="delivery-timeline"
+        aria-label="Delivery progress"
+      >
+        <div class="delivery-step" data-status="placed" aria-current="step">
+          <span class="delivery-step-icon" aria-hidden="true">1</span>
+          <div>
+            <h2>Order placed</h2>
+            <p>Your order has been received.</p>
+          </div>
+        </div>
+
+        <div class="delivery-step" data-status="preparing">
+          <span class="delivery-step-icon" aria-hidden="true">2</span>
+          <div>
+            <h2>Preparing</h2>
+            <p>The restaurant is preparing your food.</p>
+          </div>
+        </div>
+
+        <div class="delivery-step" data-status="ready">
+          <span class="delivery-step-icon" aria-hidden="true">3</span>
+          <div>
+            <h2>Ready for pickup</h2>
+            <p>Your order is ready for the courier.</p>
+          </div>
+        </div>
+
+        <div class="delivery-step" data-status="out_for_delivery">
+          <span class="delivery-step-icon" aria-hidden="true">4</span>
+          <div>
+            <h2>Out for delivery</h2>
+            <p>Your courier is on the way.</p>
+          </div>
+        </div>
+
+        <div class="delivery-step" data-status="delivered">
+          <span class="delivery-step-icon" aria-hidden="true">5</span>
+          <div>
+            <h2>Delivered</h2>
+            <p>Your order has arrived.</p>
+          </div>
+        </div>
+      </section>
+
+      
+<!-- Loyalty points -->
+<div class="loyalty-summary" id="loyalty-summary">
+  <h2>⭐ Cravely Rewards</h2>
+  <p>
+    Available points:
+    <strong id="loyalty-balance">Loading...</strong>
+  </p>
+  <p id="loyalty-message">
+    Earn points when your order is delivered.
+  </p>
+</div>
+
+      <!-- Ordered food items -->
       <div id="success-items"></div>
-      <a class="button button-primary full-width" href="/orders.html">View your orders</a>
+
+      <!-- Order history -->
+      <a class="button button-primary full-width" href="/orders.html">
+        View your orders
+      </a>
     </section>
-    <p class="form-message is-error" id="success-error" role="status"></p>
+
+    <!-- Error messages -->
+    <p
+      class="form-message is-error"
+      id="success-error"
+      role="alert"
+      aria-live="assertive"
+    ></p>
+
   </main>
 </body>
 </html>
+```

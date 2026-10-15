@@ -90,7 +90,7 @@ h1, h2, h3, .brand, .food-name { font-family: "Space Grotesk", Arial, sans-serif
 .popular-badge { position: absolute; top: 9px; left: 9px; border-radius: 30px; padding: 5px 8px; color: #ffd1bb; background: #21130fea; font-size: .64rem; font-weight: 700; }
 .food-content { padding: 12px; }
 .food-name { margin: 0 0 5px; font-size: .96rem; letter-spacing: -.035em; }
-.food-description { display: -webkit-box; min-height: 34px; overflow: hidden; margin: 0 0 12px; color: var(--muted); font-size: .72rem; line-height: 1.4; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.food-description { display: -webkit-box; min-height: 34px; overflow: hidden; margin: 0 0 12px; color: var(--muted); font-size: .72rem; line-height: 1.4; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; }
 .food-meta { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
 .food-price { font-size: .85rem; font-weight: 700; white-space: nowrap; }
 .food-rating { color: #ffc467; font-size: .72rem; white-space: nowrap; }
@@ -159,4 +159,233 @@ h1, h2, h3, .brand, .food-name { font-family: "Space Grotesk", Arial, sans-serif
 @media (min-width: 960px) {
   .food-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .promo-banner { min-height: 155px; padding: 28px; }
+}
+
+/* ================= RESTAURANT DISCOVERY ================= */
+
+.restaurant-section {
+  margin: 30px 0;
+}
+
+.restaurant-section .section-heading {
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.restaurant-section .section-heading .page-subtitle {
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.restaurant-filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.restaurant-filters .search-wrap {
+  min-width: 0;
+  margin-top: 0;
+}
+
+.restaurant-filters .select-input {
+  width: 100%;
+  min-height: 48px;
+  background: var(--surface);
+}
+
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.restaurant-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 13px;
+  background: linear-gradient(145deg, var(--surface-raised), var(--surface));
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.restaurant-card:hover {
+  border-color: #ff5a1f80;
+  transform: translateY(-2px);
+}
+
+.restaurant-card h3 {
+  margin: 0 0 9px;
+  font-size: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.restaurant-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.restaurant-card .restaurant-location {
+  margin-top: 12px;
+  color: var(--orange-light);
+  font-size: 0.75rem;
+}
+
+.restaurant-section .empty-state {
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+}
+
+@media (min-width: 680px) {
+  .restaurant-filters {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    align-items: center;
+  }
+
+  .restaurant-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+  }
+
+  .restaurant-card {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 960px) {
+  .restaurant-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+}
+
+
+/* Restaurant star ratings */
+.restaurant-card .restaurant-rating {
+  margin-top: 12px;
+  color: #fbbf24;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+
+/* Customer restaurant review form */
+.restaurant-review-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.restaurant-review-form h4 {
+  margin: 0;
+  color: #333;
+}
+
+.restaurant-review-form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.restaurant-review-form input,
+.restaurant-review-form select,
+.restaurant-review-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.restaurant-review-form button {
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  background: #f97316;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.restaurant-review-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.review-message {
+  margin: 0;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+
+/* Customer reviews displayed on restaurant cards */
+.restaurant-reviews {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.restaurant-reviews h4 {
+  margin: 0 0 12px;
+  color: #333;
+}
+
+.restaurant-review {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #fff7ed;
+}
+
+.review-stars {
+  margin: 0 0 5px;
+  color: #f59e0b;
+  letter-spacing: 2px;
+}
+
+.reviewer-name {
+  margin: 0 0 5px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.review-comment {
+  margin: 0;
+  color: #4b5563;
+  overflow-wrap: anywhere;
+}
+
+.no-reviews {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+
+/* Cravely loyalty rewards */
+.loyalty-summary {
+  margin: 24px 0;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  text-align: left;
+}
+
+.loyalty-summary h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.loyalty-summary p {
+  margin-bottom: 8px;
+}
+
+#loyalty-balance {
+  font-size: 1.1rem;
 }

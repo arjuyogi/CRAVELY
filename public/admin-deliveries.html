@@ -1,0 +1,53 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery Management | Cravely</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/admin-deliveries.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/index.html">
+        <span class="brand-mark">C</span>
+        Cravely
+      </a>
+      <a class="button button-primary" href="/orders.html">My Orders</a>
+    </div>
+  </header>
+
+  <main class="container admin-deliveries">
+    <p class="eyebrow">ADMINISTRATION</p>
+    <h1 class="page-title">Delivery management</h1>
+    <p class="page-subtitle">
+      Review recent orders and update their delivery progress.
+    </p>
+
+    <div class="delivery-toolbar">
+      <label for="statusFilter">Filter by delivery stage</label>
+      <select id="statusFilter" class="select-input">
+        <option value="all">All stages</option>
+        <option value="placed">Order placed</option>
+        <option value="preparing">Preparing</option>
+        <option value="ready">Ready for pickup</option>
+        <option value="out_for_delivery">Out for delivery</option>
+        <option value="delivered">Delivered</option>
+      </select>
+      <button id="refreshOrders" class="button button-primary" type="button">
+        Refresh
+      </button>
+    </div>
+
+    <p id="dashboardMessage" class="form-message" role="status"
+       aria-live="polite">Loading orders...</p>
+
+    <section id="deliveryOrders" class="delivery-orders"
+             aria-label="Recent orders">
+    </section>
+  </main>
+</body>
+</html>
+```

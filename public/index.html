@@ -22,6 +22,55 @@
         <button class="avatar-button" id="avatar-button" type="button" aria-label="Sign out">C</button>
       </div>
     </header>
+        <!-- Restaurant Discovery -->
+    <section class="restaurant-section" aria-labelledby="restaurant-heading">
+      <div class="section-heading">
+        <div>
+          <h2 id="restaurant-heading">Discover restaurants</h2>
+          <p class="page-subtitle">Find a restaurant near your favorite places.</p>
+        </div>
+      </div>
+
+      <div class="restaurant-filters">
+        <label class="search-wrap" for="restaurant-search">
+          <input
+            class="search-input"
+            id="restaurant-search"
+            type="search"
+            placeholder="Search restaurants or addresses..."
+            maxlength="100"
+          >
+        </label>
+        
+        <label class="visually-hidden" for="restaurant-rating-filter">
+          Filter by minimum restaurant rating
+        </label>
+        <select class="select-input" id="restaurant-rating-filter">
+          <option value="0">All ratings</option>
+          <option value="3">3+ stars</option>
+          <option value="4">4+ stars</option>
+          <option value="4.5">4.5+ stars</option>
+        </select>
+
+        <label class="visually-hidden" for="municipality-filter">
+          Filter by municipality
+        </label>
+        <select class="select-input" id="municipality-filter">
+          <option value="">All municipalities</option>
+        </select>
+      </div>
+
+      <p class="form-message" id="restaurant-message" role="status"></p>
+
+      <div class="restaurant-grid" id="restaurant-grid"></div>
+
+      <section class="empty-state" id="no-restaurants" hidden>
+        <h2>No restaurants found</h2>
+        <p>Try a different name or municipality.</p>
+      </section>
+    </section>
+    <!-- End Restaurant Discovery -->
+
     <section aria-labelledby="welcome-title">
       <h1 class="page-title" id="welcome-title">Good food, good mood.</h1>
       <p class="page-subtitle">A little something delicious is just around the corner.</p>
